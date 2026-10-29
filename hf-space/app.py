@@ -1,14 +1,12 @@
-# Crane Builder — Beryl Labs
-# Hugging Face Space — Gradio SDK (RAW MODE)
-# Serves crane-builder-ui.html as the IDE frontend
-
-import gradio as gr
-import pathlib
-
-HTML_PATH = pathlib.Path(__file__).parent / "crane-builder-ui.html"
-
-with gr.Blocks() as demo:
-    gr.HTML(HTML_PATH.read_text(encoding="utf-8"))
-
-if __name__ == "__main__":
-    demo.launch()
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="refresh" content="0; url=/index.html" />
+<title>Crane Builder — Redirecting to IDE</title>
+</head>
+<body>
+<p>Redirecting to Crane Builder IDE…</p>
+<script>window.location.replace("/index.html");</script>
+</body>
+</html>
