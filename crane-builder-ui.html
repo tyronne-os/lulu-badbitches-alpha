@@ -71,7 +71,7 @@ textarea::placeholder { color: var(--fg-5); }
 .proj-overlay { position:fixed; inset:0; z-index:200; background:rgba(0,0,0,.45); display:flex; align-items:flex-start; justify-content:flex-start; padding:56px 0 0 12px; }
 .proj-panel { width:320px; max-height:calc(100vh - 76px); background:var(--bg); border:1px solid var(--border-mid); border-radius:14px; display:flex; flex-direction:column; overflow:hidden; box-shadow:0 12px 40px rgba(0,0,0,.5); }
 .proj-head { display:flex; align-items:center; justify-content:space-between; padding:14px 16px 10px; border-bottom:1px solid var(--border); }
-.proj-head h3 { font:600 14px 'Geist',sans-serif; color:'color(--fg-1)'; margin:0; }
+.proj-head h3 { font:600 14px 'Geist',sans-serif; color: var(--fg-1); margin:0; }
 .proj-list { overflow-y:auto; flex:1; padding:8px; display:flex; flex-direction:column; gap:4px; }
 .proj-item { display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:9px; border:1px solid transparent; cursor:pointer; background:none; text-align:left; width:100%; }
 .proj-item:hover { background:var(--surface); }
@@ -79,12 +79,12 @@ textarea::placeholder { color: var(--fg-5); }
 .proj-item-dot { width:8px; height:8px; border-radius:50%; background: var(--fg-5); flex-shrink:0; }
 .proj-item.active .proj-item-dot { background:var(--gold); box-shadow:0 0 6px var(--gold); }
 .proj-item-body { flex:1; min-width:0; }
-.proj-item-name { font:500 13px 'Geist',sans-serif; color:'color(--fg-1)'; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.proj-item-name { font:500 13px 'Geist',sans-serif; color: var(--fg-1); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .proj-item-meta { font:400 10.5px 'Geist Mono',monospace; color: var(--fg-5); margin-top:2px; }
 .proj-item-del { opacity:0; padding:3px 6px; border-radius:6px; background:none; border:none; color:#fca5a5; font-size:14px; cursor:pointer; flex-shrink:0; }
 .proj-item:hover .proj-item-del { opacity:1; }
 .proj-footer { padding:10px; border-top:1px solid var(--border); }
-.proj-new-input { width:100%; height:34px; padding:0 10px; border-radius:8px; background:var(--surface); border:1px solid var(--border-mid); color:'color(--fg-1)'; font:400 13px 'Geist',sans-serif; box-sizing:border-box; margin-bottom:8px; }
+.proj-new-input { width:100%; height:34px; padding:0 10px; border-radius:8px; background:var(--surface); border:1px solid var(--border-mid); color: var(--fg-1); font:400 13px 'Geist',sans-serif; box-sizing:border-box; margin-bottom:8px; }
 .proj-new-input::placeholder { color: var(--fg-5); }
 .btn-new {
   display: flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px;
@@ -454,7 +454,7 @@ textarea::placeholder { color: var(--fg-5); }
 /* ── diffusion center panel ── */
 .mode-bar { display:flex; align-items:center; gap:4px; padding:0 14px; height:38px; border-bottom:1px solid var(--border); background:var(--surface); flex-shrink:0; }
 .mode-btn { display:flex; align-items:center; gap:5px; padding:4px 10px; border-radius:6px; font:600 10px 'Geist',sans-serif; letter-spacing:.1em; color: var(--fg-5); cursor:pointer; border:1px solid transparent; transition:color .15s,background .15s,border-color .15s; }
-.mode-btn:hover { color:'var(--fg-3)'; background:var(--surface2); }
+.mode-btn:hover { color: var(--fg-3); background:var(--surface2); }
 .mode-btn.active { color:var(--gold); background:rgba(238,202,80,.08); border-color:rgba(238,202,80,.2); }
 .mode-btn svg { opacity:.7; }
 .mode-btn.active svg { opacity:1; }
@@ -3272,7 +3272,7 @@ function autumnFailSafe(text, currentModel) {
       <span className="status-dot" style={hfGpuConnected ? {} : { background: '#eeca50', animation: 'none' }}></span>
       HF {hfGpuConnected ? 'CONNECTED' : 'CHECKING'} · {String(Math.floor(hfGpuTimer.seconds / 60)).padStart(2, '0')}:{String(hfGpuTimer.seconds % 60).padStart(2, '0')} · {hfGpuTimer.requests} req · ✕ STOP
     </div>}
-    {updateReady && <div className="status-pill" style={{cursor:'pointer', borderColor:'rgba(238,202,80,.6)', color:'var(--gold)'}} title={'A new build is live — reload to pick it up. Same-origin check only; the page never phones home.'} onClick={() => location.reload()}>
+    {updateReady && <div className="status-pill" style={{cursor:'pointer', borderColor:'rgba(238,202,80,.6)', color: 'var(--gold)'}} title={'A new build is live — reload to pick it up. Same-origin check only; the page never phones home.'} onClick={() => location.reload()}>
       <span className="status-dot" style={{ background: 'var(--gold)', animation: 'none' }}></span>
       UPDATE READY · RELOAD
     </div>}
@@ -3288,9 +3288,9 @@ function autumnFailSafe(text, currentModel) {
       <div className="messages" id="messages" ref={feedRef}>
 
         <div style={{display:'flex',alignItems:'center',gap:'8px',padding:'4px 2px',marginBottom:'2px'}}>
-          <div style={{flex:1,height:'1px',background:'var(--border)'}}></div>
+          <div style={{flex:1,height:'1px',background: 'var(--border)'}}></div>
           <span style={{fontFamily:"'Geist Mono',monospace",fontSize:'9px',letterSpacing:'.14em',color:'var(--fg-5)',whiteSpace:'nowrap'}}>{S.nodeName} · {S.region} · {S.gpu}</span>
-          <div style={{flex:1,height:'1px',background:'var(--border)'}}></div>
+          <div style={{flex:1,height:'1px',background: 'var(--border)'}}></div>
         </div>
 
         {msgs.map((m, i) => m.hidden ? null : <Msg key={i} {...m} agent={S.agentName} onRun={() => runFeature(i)} onRunCu={() => runComputer(i)} />)}
@@ -3340,19 +3340,19 @@ function autumnFailSafe(text, currentModel) {
                   <div style={{padding:'4px 10px 2px',fontSize:'9px',letterSpacing:'.12em',color:'var(--fg-5)',fontFamily:"'Geist',sans-serif"}}>PINNED · YOUR CO-FOUNDER</div>
                   <ModelRow key={DEFAULT_LOCAL_MODEL} id={DEFAULT_LOCAL_MODEL} label="Amanda" tag="ALWAYS READY" tagColor="#eeca50" active={model === DEFAULT_LOCAL_MODEL} hasProfile={!!S.profiles[DEFAULT_LOCAL_MODEL]} onPick={() => { setModel(DEFAULT_LOCAL_MODEL); if (S.autoSwitch) setCenterMode('builder'); setMenuOpen(false); }} onEdit={k => { setMenuOpen(false); setProfEdit(k); }} />
                   <ModelRow key={AMANDA_MINI} id={AMANDA_MINI} label="Amanda Mini" tag={miniModels.includes(AMANDA_MINI) ? 'ALWAYS READY' : 'OFFLINE'} tagColor={miniModels.includes(AMANDA_MINI) ? '#22d3ee' : '#71717a'} active={model === AMANDA_MINI} hasProfile={!!S.profiles[AMANDA_MINI]} onPick={() => { setModel(AMANDA_MINI); if (S.autoSwitch) setCenterMode('builder'); setMenuOpen(false); }} onEdit={k => { setMenuOpen(false); setProfEdit(k); }} />
-                  <div style={{height:'1px',background:'var(--border)',margin:'4px 6px'}}></div>
+                  <div style={{height:'1px',background: 'var(--border)',margin:'4px 6px'}}></div>
                   <div style={{padding:'4px 10px 2px',fontSize:'9px',letterSpacing:'.12em',color:'var(--fg-5)',fontFamily:"'Geist',sans-serif"}}>STORED IN GPU · {S.nodeName.toUpperCase()}</div>
                   {models.length ? models.map(id => <ModelRow key={id} id={id} label={short(id)} tag="LOCAL" tagColor="#34d399" active={id === model} hasProfile={!!S.profiles[id]} onPick={() => { setModel(id); if (S.autoSwitch) setCenterMode(modelMode(id)); setMenuOpen(false); }} onEdit={k => { setMenuOpen(false); setProfEdit(k); }} />) : <div style={{padding:'6px 10px',fontSize:'10px',color:'var(--fg-5)',fontFamily:"'Geist Mono',monospace"}}>none found — start the GPU, then the tunnel</div>}
-                  <div style={{height:'1px',background:'var(--border)',margin:'4px 6px'}}></div>
+                  <div style={{height:'1px',background: 'var(--border)',margin:'4px 6px'}}></div>
                   <div style={{padding:'4px 10px 2px',fontSize:'9px',letterSpacing:'.12em',color:'var(--fg-5)',fontFamily:"'Geist',sans-serif"}}>CPU · NO VRAM USED</div>
                   {cpuOthers.length ? cpuOthers.map(id => <ModelRow key={id} id={id} label={short(id)} tag="CPU" tagColor="#94a3b8" active={id === model} hasProfile={!!S.profiles[id]} onPick={() => { setModel(id); if (S.autoSwitch) setCenterMode(modelMode(id)); setMenuOpen(false); }} onEdit={k => { setMenuOpen(false); setProfEdit(k); }} />) : <div style={{padding:'6px 10px',fontSize:'10px',color:'var(--fg-5)',fontFamily:"'Geist Mono',monospace"}}>no other local models — Amanda runs solo; add more to THE STAFF</div>}
-                  <div style={{height:'1px',background:'var(--border)',margin:'4px 6px'}}></div>
+                  <div style={{height:'1px',background: 'var(--border)',margin:'4px 6px'}}></div>
                   <div style={{padding:'4px 10px 2px',fontSize:'9px',letterSpacing:'.12em',color:'var(--fg-5)',fontFamily:"'Geist',sans-serif"}}>NVIDIA CLOUD · NIM</div>
                   {nvidiaAll.length ? nvidiaAll.map(({id, label, tag}) => <ModelRow key={id} id={id} label={label} tag={tag} tagColor="#76b900" active={id === model} hasProfile={!!S.profiles[id]} onPick={() => { setModel(id); if (S.autoSwitch) setCenterMode(modelMode(id)); setMenuOpen(false); }} onEdit={k => { setMenuOpen(false); setProfEdit(k); }} />) : <div style={{padding:'6px 10px',fontSize:'10px',color:'var(--fg-5)',fontFamily:"'Geist Mono',monospace"}}>{S.nvidiaKey ? 'catalog came back empty — check the key in Settings' : 'enter your NVIDIA NIM key below — the full catalog loads automatically'}</div>}
-                  <div style={{height:'1px',background:'var(--border)',margin:'4px 6px'}}></div>
+                  <div style={{height:'1px',background: 'var(--border)',margin:'4px 6px'}}></div>
                   <div style={{padding:'4px 10px 2px',fontSize:'9px',letterSpacing:'.12em',color:'var(--fg-5)',fontFamily:"'Geist',sans-serif"}}>NVIDIA ENTERPRISE · DIGITAL HUMANS</div>
                   {nvidiaEntAll.length ? nvidiaEntAll.map(id => <ModelRow key={id} id={id} label={short(id)} tag="NVIDIA ENT" tagColor="#ff7a00" active={id === model} hasProfile={!!S.profiles[id]} onPick={() => { setModel(id); if (S.autoSwitch) setCenterMode(modelMode(id)); setMenuOpen(false); }} onEdit={k => { setMenuOpen(false); setProfEdit(k); }} />) : <div style={{padding:'6px 10px',fontSize:'10px',color:'var(--fg-5)',fontFamily:"'Geist Mono',monospace"}}>{S.nvidiaEnterpriseKey ? 'enterprise catalog came back empty — paste ids in Settings' : 'enter your NVIDIA Enterprise key below — its catalog loads automatically'}</div>}
-                  <div style={{height:'1px',background:'var(--border)',margin:'4px 6px'}}></div>
+                  <div style={{height:'1px',background: 'var(--border)',margin:'4px 6px'}}></div>
                   <div style={{padding:'4px 10px 2px',fontSize:'9px',letterSpacing:'.12em',color:'var(--fg-5)',fontFamily:"'Geist',sans-serif"}}>HF GPU · FREE INFERENCE</div>
                   <div className="mrow" style={{cursor:'pointer'}} onClick={() => { if (S.hfGpuOn && !hfGpuToken()) pasteHfToken(); else setSetting('hfGpuOn', !S.hfGpuOn); }} title="Power the HF Inference Providers GPU yourself">
                     <span className="mname" style={{display:'flex',alignItems:'center',gap:'6px'}}>
@@ -3364,7 +3364,7 @@ function autumnFailSafe(text, currentModel) {
                     </span>
                   </div>
                   {S.hfGpuOn && (hfGpuModels.length ? hfGpuModels.map(id => <ModelRow key={id} id={id} label={short(id)} tag="HF" tagColor="#eab308" active={id === model} hasProfile={!!S.profiles[id]} onPick={() => { setModel(id); if (S.autoSwitch) setCenterMode(modelMode(id)); setMenuOpen(false); }} onEdit={k => { setMenuOpen(false); setProfEdit(k); }} />) : <div style={{padding:'6px 10px',fontSize:'10px',color:hfGpuErr && hfGpuErr.indexOf('token') >= 0 ? 'var(--gold)' : 'var(--fg-5)',fontFamily:"'Geist Mono',monospace",cursor:hfGpuErr && hfGpuErr.indexOf('token') >= 0 ? 'pointer' : 'default'}} onClick={() => { if (!hfGpuToken()) pasteHfToken(); }}>{hfGpuErr && hfGpuErr.indexOf('token') >= 0 ? '📋 click HERE to paste your HF token' : hfGpuErr || 'loading the catalog…'}</div>)}
-                  <div style={{height:'1px',background:'var(--border)',margin:'4px 6px'}}></div>
+                  <div style={{height:'1px',background: 'var(--border)',margin:'4px 6px'}}></div>
                   <div style={{padding:'4px 10px 2px',fontSize:'9px',letterSpacing:'.12em',color:'var(--fg-5)',fontFamily:"'Geist',sans-serif"}}>OPENCODE · FREE VIA OPENROUTER</div>
                   {opencodeModels === null ? (
                     <div style={{padding:'6px 10px',fontSize:'10px',color:'var(--fg-5)',fontFamily:"'Geist Mono',monospace"}}>loading free models…</div>
@@ -3373,7 +3373,7 @@ function autumnFailSafe(text, currentModel) {
                   )) : (
                     <div style={{padding:'6px 10px',fontSize:'10px',color:'var(--fg-5)',fontFamily:"'Geist Mono',monospace"}}>no free models came back — check your connection</div>
                   )}
-                  <div style={{height:'1px',background:'var(--border)',margin:'4px 6px'}}></div>
+                  <div style={{height:'1px',background: 'var(--border)',margin:'4px 6px'}}></div>
                   <div style={{padding:'4px 10px 2px',fontSize:'9px',letterSpacing:'.12em',color:'var(--fg-5)',fontFamily:"'Geist',sans-serif"}}>TYPESAFE · SYSTEM ONE</div>
                   <div className="mrow" style={{cursor:'pointer'}} onClick={() => {
                     if (!S.providers.typesafe) { const key = prompt('TypeSafe API key — TYPESAFE_API_KEY from console.typesafe.ai/keys'); if (key) setSetting('providers', {...S.providers, typesafe: key.trim()}); }
@@ -3382,7 +3382,7 @@ function autumnFailSafe(text, currentModel) {
                     <span className="mname">Jev</span>
                     <span className="mtag" style={{color: !S.providers.typesafe ? '#71717a' : S.jevRoute ? '#22d3ee' : '#eeca50'}}>{!S.providers.typesafe ? 'needs key' : S.jevRoute ? 'routing + guardrails ON' : 'routing off — click to arm'}</span>
                   </div>
-                  <div style={{height:'1px',background:'var(--border)',margin:'4px 6px'}}></div>
+                  <div style={{height:'1px',background: 'var(--border)',margin:'4px 6px'}}></div>
                   <div style={{padding:'4px 10px 2px',fontSize:'9px',letterSpacing:'.12em',color:'var(--fg-5)',fontFamily:"'Geist',sans-serif"}}>PROVIDERS · API KEYS</div>
                   {Object.entries(S.providers || {}).map(([k,v]) => (
                     <div key={k} className="mrow" style={{cursor:'pointer'}} onClick={() => {
@@ -3407,14 +3407,14 @@ function autumnFailSafe(text, currentModel) {
                     <span className="mname" style={{textTransform:'uppercase'}}>nvidia enterprise</span>
                     <span className="mtag" style={{color: S.nvidiaEnterpriseKey ? '#34d399' : '#71717a'}}>{S.nvidiaEnterpriseKey ? 'configured' : 'needs key'}</span>
                   </div>
-                  <div style={{height:'1px',background:'var(--border)',margin:'4px 6px'}}></div>
+                  <div style={{height:'1px',background: 'var(--border)',margin:'4px 6px'}}></div>
                   <div style={{padding:'4px 10px 2px',fontSize:'9px',letterSpacing:'.12em',color:'var(--fg-5)',fontFamily:"'Geist',sans-serif"}}>DIFFUSION · HF API</div>
                   {HF_DIFFUSION_MODELS.map(({id, label, tag}) => <ModelRow key={id} id={id} label={label} tag={tag.split(' · ')[1].toUpperCase()} tagColor={tag.includes('image') ? '#818cf8' : '#34d399'} active={id === model} hasProfile={!!S.profiles[id]} onPick={() => { setModel(id); setSetting(tag.includes('video') ? 'vidApi' : 'imgApi', 'https://api-inference.huggingface.co/models/' + id); if (S.autoSwitch) setCenterMode(modelMode(id)); setMenuOpen(false); }} onEdit={k => { setMenuOpen(false); setProfEdit(k); }} />)}
                 </div>
               )}
             </div>
             <div className="composer-spacer"></div>
-            <button className="tool-btn" title="Dictate — speech to text in the composer" onClick={toggleDict} style={dictating ? {color:'var(--gold)', borderColor:'rgba(238,202,80,.6)'} : null}>
+            <button className="tool-btn" title="Dictate — speech to text in the composer" onClick={toggleDict} style={dictating ? {color: 'var(--gold)', borderColor:'rgba(238,202,80,.6)'} : null}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 10h.01M11 10h.01M15 10h.01M7 14h10"/></svg>
             </button>
             <button className="btn-mic" id="micBtn" title="Dictate into the chat box" onClick={toggleTalk} style={micStyle}>
@@ -3533,7 +3533,7 @@ function autumnFailSafe(text, currentModel) {
               <input className="adm-input" type="file" accept="image/*" style={{flex:1}} />
               <button className="adm-btn gold" onClick={() => addBuildLog('Movie pipeline ready — upload two images to start')}>RENDER</button>
             </div>
-            <div style={{marginTop:'24px',padding:'12px',borderRadius:'8px',background:'var(--surface)',border:'1px solid var(--border)'}}>
+            <div style={{marginTop:'24px',padding:'12px',borderRadius:'8px',background: 'var(--surface)',border:'1px solid var(--border)'}}>
               <div style={{fontSize:'11px',color:'var(--fg-5)',marginBottom:'8px',fontFamily:"'Geist Mono',monospace"}}>HOW IT WORKS</div>
               <div style={{fontSize:'12px',color:'var(--fg-2)',lineHeight:'1.6'}}>
                 1. Describe your project in chat or upload two images<br />
@@ -3573,7 +3573,7 @@ function autumnFailSafe(text, currentModel) {
           </div>
           {genImg && (
             <div style={{display:'flex',gap:'8px',padding:'0 14px 10px',alignItems:'center'}}>
-              <a href={genImg} download="crane-generated.png" style={{fontSize:'11px',color:'var(--gold)'}}>↓ Save image</a>
+              <a href={genImg} download="crane-generated.png" style={{fontSize:'11px',color: 'var(--gold)'}}>↓ Save image</a>
               <button onClick={() => { setGenImg(null); setRefImg(null); }} style={{fontSize:'11px',color:'var(--fg-5)',background:'none',border:'none',cursor:'pointer',padding:0}}>Clear</button>
             </div>
           )}
