@@ -1245,7 +1245,6 @@ function MemoryPanel({ S, onClose }) {
       })
       .catch(() => setMsg('✕ journal save failed — is her memory server awake on 8092?'));
   };
-    .catch(e => setMsg('✕ ' + e.message + ' — is her memory server awake on 8092?'));
   const savePerson = () => post('/people', { name: pName, relation: pRel, notes: pNotes })
     .then(() => { setPName(''); setPRel(''); setPNotes(''); setMsg('✓ Person added to her world'); load(); })
     .catch(e => setMsg('✕ ' + e.message));
